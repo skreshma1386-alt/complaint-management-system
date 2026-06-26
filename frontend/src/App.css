@@ -1,0 +1,295 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#f4f7fc;
+}
+
+/* Navbar */
+
+.navbar{
+  background:#0f172a;
+  color:white;
+  padding:18px 50px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo{
+  font-size:28px;
+  font-weight:700;
+}
+
+.nav-links{
+  display:flex;
+  gap:20px;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:white;
+  font-size:16px;
+  transition:0.3s;
+}
+
+.nav-links a:hover{
+  color:#38bdf8;
+}
+/*ThankYou Page*/
+.thankyou-container {
+  max-width: 600px;
+  margin: 80px auto;
+  padding: 40px;
+  text-align: center;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.thankyou-container h1 {
+  color: #28a745;
+  margin-bottom: 20px;
+}
+
+.thankyou-container p {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.thankyou-container button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.thankyou-container button:hover {
+  background: #0056b3;
+}
+/* Home Page */
+
+.home{
+  min-height:100vh;
+  background:linear-gradient(135deg,#2563eb,#1e293b);
+  color:white;
+}
+
+.hero{
+  text-align:center;
+  padding:120px 20px;
+}
+
+.hero h1{
+  font-size:60px;
+  margin-bottom:20px;
+}
+
+.hero p{
+  font-size:22px;
+  max-width:800px;
+  margin:auto;
+  line-height:1.7;
+}
+
+.hero-buttons{
+  margin-top:35px;
+}
+
+.hero-buttons button{
+  padding:14px 28px;
+  margin:10px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:16px;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.hero-buttons button:hover{
+  transform:translateY(-4px);
+}
+
+.btn-primary{
+  background:#22c55e;
+  color:white;
+}
+
+.btn-secondary{
+  background:#f59e0b;
+  color:white;
+}
+
+.btn-complaint{
+  background:#ef4444;
+  color:white;
+}
+
+/* Features */
+
+.features{
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  flex-wrap:wrap;
+  padding:40px;
+}
+
+.feature-card{
+  width:300px;
+  background:white;
+  color:#1e293b;
+  padding:25px;
+  border-radius:15px;
+  text-align:center;
+  box-shadow:0 5px 20px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+
+.feature-card:hover{
+  transform:translateY(-8px);
+}
+
+.feature-card h3{
+  margin-bottom:15px;
+}
+
+/* Forms */
+
+.form-container{
+  width:450px;
+  margin:50px auto;
+  background:white;
+  padding:35px;
+  border-radius:15px;
+  box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+.form-container h2{
+  text-align:center;
+  margin-bottom:25px;
+  color:#1e293b;
+}
+
+.form-container input,
+.form-container textarea{
+  width:100%;
+  padding:14px;
+  margin-top:15px;
+  border:1px solid #d1d5db;
+  border-radius:8px;
+  outline:none;
+  font-size:15px;
+}
+
+.form-container input:focus,
+.form-container textarea:focus{
+  border-color:#2563eb;
+}
+
+.form-container textarea{
+  height:120px;
+  resize:none;
+}
+
+.form-container button{
+  width:100%;
+  padding:14px;
+  margin-top:20px;
+  background:#2563eb;
+  color:white;
+  border:none;
+  border-radius:8px;
+  font-size:16px;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.form-container button:hover{
+  background:#1d4ed8;
+}
+
+/* Complaint Cards */
+
+.complaint-list{
+  width:80%;
+  margin:30px auto;
+}
+
+.complaint-card{
+  background:white;
+  padding:20px;
+  margin-bottom:15px;
+  border-left:5px solid #2563eb;
+  border-radius:10px;
+  box-shadow:0 3px 10px rgba(0,0,0,0.08);
+}
+
+.complaint-card h3{
+  margin-bottom:10px;
+  color:#1e293b;
+}
+
+.complaint-card p{
+  color:#475569;
+  margin-bottom:8px;
+}
+
+.status{
+  display:inline-block;
+  padding:6px 12px;
+  border-radius:20px;
+  background:#facc15;
+  color:black;
+  font-weight:600;
+}
+
+/* Footer */
+
+.footer{
+  background:#0f172a;
+  color:white;
+  text-align:center;
+  padding:20px;
+  margin-top:50px;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+  .navbar{
+    flex-direction:column;
+    gap:15px;
+  }
+
+  .hero h1{
+    font-size:40px;
+  }
+
+  .hero p{
+    font-size:18px;
+  }
+
+  .form-container{
+    width:90%;
+  }
+
+  .features{
+    flex-direction:column;
+    align-items:center;
+  }
+}
