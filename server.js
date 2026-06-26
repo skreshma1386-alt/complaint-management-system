@@ -3,65 +3,39 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 require("dotenv").config();
 
-const Complaint = require("./models/Complaint");
-
-const app = express();   // <-- app is created here
+const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+    origin: "https://frontend-mkiufvpp9-skreshma1386-alts-projects.vercel.app"
+}));
+
 app.use(express.json());
-
-
 // MongoDB Connection
-mongoose.connect("mongodb://127.0.0.1:27017/complaintDB")
-.then(()=>{
-    console.log("MongoDB Connected Successfully");
+mongoose.connect(process.env.MONGO_URI, {
+  family: 4,
+  serverSelectionTimeoutMS: 10000,
 })
-.catch((error)=>{
-    console.log("MongoDB Error:", error);
+.then(() => {
+  console.log("MongoDB Connected Successfully");
+})
+.catch((error) => {
+  console.log("MongoDB Connection Error:", error.message);
 });
 
+// Routes
+const complaintRoutes = require("./routes/complaintRoutes");
 
-// Test route
-app.get("/", (req,res)=>{
-    res.send("Backend is running");
+app.use("/api/complaints", complaintRoutes);
+
+// Test Route
+app.get("/", (req, res) => {
+  res.send("Complaint Management System Backend Running Successfully");
 });
 
+// Port for Render
+const PORT = process.env.PORT || 5000;
 
-// Submit Complaint API
-app.post("/api/complaints", async(req,res)=>{
-
-    try{
-
-        const newComplaint = new Complaint({
-            name:req.body.name,
-            email:req.body.email,
-            complaint:req.body.complaint
-        });
-
-
-        await newComplaint.save();
-
-
-        res.status(200).json({
-            message:"Complaint submitted successfully"
-        });
-
-    }
-    catch(error){
-
-        console.log(error);
-
-        res.status(500).json({
-            message:"Error submitting complaint"
-        });
-
-    }
-
-});
-
-
-// Server Start
-app.listen(3001,()=>{
-    console.log("Server running on port 3001");
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });

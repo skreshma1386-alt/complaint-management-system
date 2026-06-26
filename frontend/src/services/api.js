@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://complaint-management-system.onrender.com",
+    baseURL: "https://your-render-backend-name.onrender.com"
 });
 
 export default API;
